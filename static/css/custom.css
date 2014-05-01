@@ -1,0 +1,48 @@
+body {
+	background-color: black;
+}
+
+#content {
+	color: rgb(200, 200, 200);
+	padding-top: 30px;
+}
+
+.hide-me {
+	display: none;
+}
+
+#content form {
+	left: 20%;
+	position: relative;
+	width: 60%;
+}
+
+#content form button {
+	position: relative;
+	top: 20px;
+}
+
+#content p {
+	font-size: 20px;
+}
+
+a {
+	display: block;
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+a:hover {
+	color: #428bca;
+}
+
+h1 {
+	color: rgb(100, 100, 100);
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 60px;
+}
+
+p#time-left {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 60px;
+}
