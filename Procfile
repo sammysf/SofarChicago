@@ -1,1 +1,1 @@
-web: gunicorn sofarchicago:app
+web: gunicorn sofarchicago:app -w 50 -t 60
