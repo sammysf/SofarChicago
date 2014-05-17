@@ -80,7 +80,7 @@ function deactivateButton() {
 
 // Set the end time
 function setExpireTime(endTime) {
-	expireTime = new Date(endTime);
+	expireTime = endTime;
 	updateTimer();
 
 	// Update timer every second
@@ -89,22 +89,17 @@ function setExpireTime(endTime) {
 
 // Update the timer
 function updateTimer() {	
-	var now = new Date();
-	var minutes = expireTime.getMinutes() - now.getMinutes();
-	var seconds = expireTime.getSeconds() - now.getSeconds();
-
-	// Clean time if necessary
-	if (seconds < 0) {
-		minutes--;
-		seconds += 60;
-	}
+	var timeLeft = expireTime - (new Date()).getTime()/1000;  // In seconds
 
 	// Deactivate button if time is up
-	if (minutes < 0) {
+	if (timeLeft < 0) {
 		// Tell the server to close down the button
 		deactivateButton();
 	}
 	else {
+		// Calculate minutes and seconds
+		var minutes = Math.floor(timeLeft/60);
+		var seconds = Math.floor(timeLeft) - minutes*60;
 
 		// Add zeroes if necessary
 		if (seconds < 10) {
